@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-logo">
             <h3>Mweki Power Solutions</h3>
-            <p>Reliable Poer solutions for Kenya's future.</p>
+            <p>Reliable Power solutions for Kenya's future.</p>
           </div>
           <div className="footer-links">
             <h4>Quick Links</h4>
