@@ -1,0 +1,82 @@
+/* Projects Page Styles */
+.projects-hero {
+  background: var(--dark-gray);
+  color: var(--white);
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+
+.projects-filter {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  justify-content: center;
+}
+
+.projects-filter button {
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--medium-gray);
+  cursor: pointer;
+}
+
+.projects-filter button.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.project-image {
+  height: 250px;
+  background: var(--light-gray);
+  position: relative;
+}
+
+.project-type {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--black);
+  margin-top: 1rem;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Update the existing .project-image class to remove the background color */
+.project-image {
+  height: 250px;
+  position: relative;
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+}

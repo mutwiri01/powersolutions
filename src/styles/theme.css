@@ -1,0 +1,8 @@
+:root {
+  --black: #0a0a0a;
+  --dark-gray: #1a1a1a;
+  --medium-gray: #333333;
+  --light-gray: #e0e0e0;
+  --white: #f8f8f8;
+  --accent: #4a4a4a; /* Subtle highlight */
+}

@@ -1,0 +1,12 @@
+/* Smooth page transitions */
+main {
+  position: relative;
+  min-height: calc(100vh - 120px); /* Adjust based on header/footer height */
+}
+
+/* Ensures content stays properly spaced */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
