@@ -59,7 +59,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Powering Kenya with <span>Reliable Energy</span>
+              Powering Kenya with <span>Reliable Power Solutions</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
