@@ -12,8 +12,7 @@ const projects = [
     title: "Nairobi Solar",
     type: "Commercial Solar",
     icon: <FaBuilding size={24} />,
-    description:
-      "Rooftop solar installation for  business complex.",
+    description: "Rooftop solar installation for  business complex.",
     image: nairobiSolar, // Reference to imported image
   },
   {
@@ -24,10 +23,11 @@ const projects = [
     image: karenResidence, // Reference to imported image
   },
   {
-    title: "Industrial Electric Installation",
-    type: "Industrial Installation",
+    title: "Overhead Line Connections",
+    type: "Domestic Installation",
     icon: <FaSolarPanel size={24} />,
-    description: "ground-mounted Installation for manufacturing facility.",
+    description:
+      "Installation of overhead lines from KPLC poles to clients step-down transformer",
     image: mombasaIndustrial, // Reference to imported image
   },
 ];

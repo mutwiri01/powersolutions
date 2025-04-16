@@ -95,6 +95,22 @@
   padding-top: 6rem;
   z-index: 5;
 }
+/* Add this to your CSS */
+.mobile-menu nav a.btn {
+  border-bottom: 1px solid var(--light-gray);
+  display: block;
+  text-align: center;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  background: var(--primary-color);
+  color: rgb(10, 10, 10);
+  border: none;
+}
+
+.mobile-menu nav a.btn:hover {
+  background: var(--primary-dark);
+}
 
 .mobile-menu.open {
   right: 0;
