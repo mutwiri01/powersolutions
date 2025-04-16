@@ -8,15 +8,22 @@ export default function ContactForm() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(() => alert("Message sent successfully!"))
-      .catch(() => alert("Failed to send message."));
+
+    
+    const serviceId = "service_g2hwqgn"; 
+    const templateId = "template_3lepj6j"; 
+    const publicKey = "eQHx2AC5c0ese1WSk"; 
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      () => {
+        alert("Message sent successfully!");
+        form.current.reset(); // Reset the form after successful send
+      },
+      (error) => {
+        console.error("Failed to send message:", error.text);
+        alert("Failed to send message. Please try again later.");
+      }
+    );
   };
 
   return (
@@ -35,7 +42,12 @@ export default function ContactForm() {
         <input type="email" name="user_email" placeholder="Email" required />
       </div>
       <div className="form-group">
-        <textarea name="message" placeholder="Your Message" required></textarea>
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          rows="5"
+        ></textarea>
       </div>
       <button type="submit" className="btn">
         Send Message

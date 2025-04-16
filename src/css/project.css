@@ -2,8 +2,9 @@
 .projects-hero {
   background: var(--dark-gray);
   color: var(--white);
-  padding: 8rem 0 4rem;
+  padding: 8rem 0 4rem; /* Adjust the top padding to create space */
   text-align: center;
+  margin-top: 80px; /* Add this line - adjust based on your header height */
 }
 
 .projects-filter {

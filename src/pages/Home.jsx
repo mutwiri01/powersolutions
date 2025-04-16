@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import "../css/home.css";
 
 // Import your background images
@@ -21,15 +21,30 @@ export default function Home() {
       setCurrentBgIndex((prevIndex) =>
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 5 seconds
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
   return (
     <div className="home">
-      <section className="hero">
-        {/* Background images with transitions */}
+      {/* Add this spacer div to account for fixed header */}
+      <div className="header-spacer"></div>
+      {/* Title Section - First Element */}
+      <section className="title-section">
+        <div className="container">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            Powering Kenya with Reliable Power Solutions
+          </motion.h1>
+        </div>
+      </section>
+
+      {/* Hero Image Section - Second Element */}
+      <section className="hero-image-section">
         <div className="hero-backgrounds">
           {backgroundImages.map((image, index) => (
             <motion.div
@@ -40,44 +55,45 @@ export default function Home() {
                 opacity: index === currentBgIndex ? 1 : 0,
                 transition: { duration: 1.5, ease: "easeInOut" },
               }}
-              style={{ backgroundImage: `url(${image})` }}
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+              }}
             />
           ))}
-          <div className="hero-overlay"></div>
         </div>
+      </section>
 
+      {/* Content Section - Below Hero Image */}
+      <section className="content-section">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             ref={ref}
-            className="hero-content"
+            className="content-wrapper"
           >
-            <motion.h1
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Powering Kenya with <span>Reliable Power Solutions</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
               Expert electrical & solar solutions for homes and businesses.
             </motion.p>
+
             <motion.div
               className="cta-buttons"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
+              transition={{ delay: 0.5 }}
             >
-              <Link to="/services" className="btn">
+              <Link to="/services" className="btn btn-primary">
                 Our Services
               </Link>
-              <Link to="/contact" className="btn btn-secondary">
+              <Link to="/contact" className="btn btn-primary">
                 Contact Us
               </Link>
             </motion.div>

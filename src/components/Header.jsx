@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import logoImage from "../assets/images/lg1.png";
+import logoImage from "../assets/images/lg3.png";
 import "../css/header.css";
 
 export default function Header() {
